@@ -39,13 +39,13 @@ export default function SampleCodeEditor() {
     }
   };
   return (
-    <div className="h-[100%] w-[100%] rounded-lg bg-gray-800 border-gray-600 border-[1px] overflow-hidden">
+    <div className="h-full w-[100%] rounded-lg bg-[#18181C] border-[#27272A] border-[1px] overflow-hidden">
       <div className="p-2 flex space-x-1">
         <CodeBracketIcon className="size-5 text-white pt-0" />
         <h6 className="text-sm font-semibold">Code</h6>
       </div>
 
-      <div className="p-2 bg-[#0D1117] border-b-gray-700 border-b-[0.1px]">
+      <div className="p-2 bg-[#0D1117] border-[#27272A] border-b-[0.1px]">
         <DropDown />
       </div>
       <div className="bg-[#0D1117] h-[20px]"></div>
