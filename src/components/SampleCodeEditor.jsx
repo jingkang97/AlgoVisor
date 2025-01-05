@@ -1,10 +1,13 @@
+import { CodeBracketIcon } from "@heroicons/react/16/solid";
 import Editor from "@monaco-editor/react";
 import { useEffect, useState } from "react";
+import DropDown from "./ui/dropdown";
 
 export default function SampleCodeEditor() {
   const [themeLoaded, setThemeLoaded] = useState(false);
 
-  const code = "print('algovisor rocks!')";
+  const code = `class Solution:
+    def lengthOfLastWord(self, s: str) -> int:`;
   const handleEditorDidMount = (editor, monaco) => {
     // Define the custom theme when Monaco is fully loaded
     if (monaco && !themeLoaded) {
@@ -12,7 +15,7 @@ export default function SampleCodeEditor() {
         base: "vs-dark", // Use 'vs-dark' as the base theme (or 'vs' for light)
         inherit: true,
         rules: [
-          { token: "keyword", foreground: "FF79C6" }, // Pinkish for keywords
+          { token: "keyword", foreground: "80C7FF" }, // Pinkish for keywords
           { token: "variable", foreground: "F1FA8C" }, // Light yellow for variables
           { token: "string", foreground: "F1FA8C" }, // Light yellow for strings
           { token: "comment", foreground: "6A9955" }, // Greenish for comments
@@ -37,12 +40,13 @@ export default function SampleCodeEditor() {
   };
   return (
     <div className="h-[100%] w-[100%] rounded-lg bg-gray-800 border-gray-600 border-[1px] overflow-hidden">
-      <div className="p-2">
-        {" "}
-        <h6 className="text-sm">Code</h6>
+      <div className="p-2 flex space-x-1">
+        <CodeBracketIcon className="size-5 text-white pt-0" />
+        <h6 className="text-sm font-semibold">Code</h6>
       </div>
+
       <div className="p-2 bg-[#0D1117] border-b-gray-700 border-b-[0.1px]">
-        <h6 className="text-sm">Python 3</h6>
+        <DropDown />
       </div>
       <div className="bg-[#0D1117] h-[20px]"></div>
       <Editor
