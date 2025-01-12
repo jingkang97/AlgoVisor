@@ -14,11 +14,11 @@ export default function DropDown() {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         {/* MenuButton displays the selected item without a background */}
-        <MenuButton className="inline-flex w-full bg-transparent justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-800">
+        <MenuButton className="inline-flex w-full bg-transparent justify-center gap-x-1.5 rounded-md px-1 py-1 text-xs font-semibold text-white shadow-sm hover:bg-gray-800 h-7">
           {selectedItem} {/* Show the selected item in the button */}
           <ChevronDownIcon
             aria-hidden="true"
-            className="-mr-1 size-5 text-gray-400"
+            className="-mr-1 size-3 text-gray-400"
           />
         </MenuButton>
       </div>

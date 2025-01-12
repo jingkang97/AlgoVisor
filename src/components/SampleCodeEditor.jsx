@@ -7,7 +7,7 @@ export default function SampleCodeEditor() {
   const [themeLoaded, setThemeLoaded] = useState(false);
 
   const code = `class Solution:
-    def lengthOfLastWord(self, s: str) -> int:`;
+        def sortArray(self, nums: List[int]) -> List[int]:`;
   const handleEditorDidMount = (editor, monaco) => {
     // Define the custom theme when Monaco is fully loaded
     if (monaco && !themeLoaded) {
@@ -45,7 +45,7 @@ export default function SampleCodeEditor() {
         <h6 className="text-sm font-semibold">Code</h6>
       </div>
 
-      <div className="p-2 bg-[#0D1117] border-[#27272A] border-b-[0.1px]">
+      <div className="p-1 bg-[#0D1117] border-[#27272A] border-b-[0.1px]">
         <DropDown />
       </div>
       <div className="bg-[#0D1117] h-[20px]"></div>
@@ -57,6 +57,7 @@ export default function SampleCodeEditor() {
         onMount={handleEditorDidMount} // Handle the Monaco editor mount event
         options={{
           minimap: { enabled: false },
+          fontSize: "10px",
         }}
       />
     </div>

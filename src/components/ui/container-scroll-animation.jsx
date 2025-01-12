@@ -25,7 +25,8 @@ export const ContainerScroll = ({ titleComponent, children }) => {
 
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -600]);
+  const translateCard = useTransform(scrollYProgress, [0, 1], [0, -1000]);
 
   return (
     <div
@@ -34,17 +35,17 @@ export const ContainerScroll = ({ titleComponent, children }) => {
     >
       {/* <div className="absolute mt-20 h-[70%] w-[95%] bg-gradient-to-r from-[#4D4DFF] to-[#00FF9D] opacity-70 transform scale-[0.95] rounded-full blur-3xl z-0" /> */}
       {/* <div className="absolute mt-20 h-[70%] w-[93%] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-70 transform scale-[0.95] rounded-full blur-3xl z-0" /> */}
-      <div className="absolute mt-20 h-[70%] w-[93%] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]  opacity-70 transform scale-[0.95] rounded-full blur-3xl z-0 animate-scaleSpread" />
+      <div className="absolute mt-12 h-[70%] w-[93%] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]  opacity-70 transform scale-[0.95] rounded-full blur-3xl z-0 animate-scaleSpread" />
 
       <div
-        className="py-10 md:py-40 w-[90%] relative"
+        className="py-10 md:py-20 w-[90%] relative"
         style={{
           perspective: "1000px",
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
 
-        <Card rotate={rotate} translate={translate} scale={scale}>
+        <Card rotate={rotate} translate={translateCard} scale={scale}>
           {children}
         </Card>
       </div>
@@ -74,7 +75,7 @@ export const Card = ({ rotate, scale, children }) => {
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full  bg-[#09090A] rounded-lg shadow-2xl"
+      className="max-w-5xl -mt-20 mx-auto h-[30rem] md:h-[40rem] w-full  bg-[#09090A] rounded-lg shadow-2xl"
       initial={{ opacity: 0, y: 50 }} // Start position (faded and below)
       animate={{ opacity: 1, y: 0 }} // End position (fully visible and at normal position)
       transition={{ duration: 0.6 }} // Duration of the animation
